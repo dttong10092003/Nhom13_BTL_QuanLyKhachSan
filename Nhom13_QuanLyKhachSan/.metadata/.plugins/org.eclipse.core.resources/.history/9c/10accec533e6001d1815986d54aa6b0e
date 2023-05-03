@@ -1,0 +1,145 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entity;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class HoaDon {
+	int maHoaDon;
+    ThuePhong datPhong;
+    double tienPhong, tienDV, thanhTien,soNgayThue=0, soGioThue=0,phuThuCheckin=0,phuThuCheckout=0;
+
+    String tenUser, tenKH,ngayThanhToan,ghiChu ;
+    Phong phong;
+	public HoaDon(int maHoaDon, ThuePhong datPhong, double tienPhong,
+			double tienDV, double thanhTien, double soNgayThue,
+			double soGioThue, double phuThuCheckin, double phuThuCheckout,
+			String tenUser, String tenKH, String ngayThanhToan, String ghiChu,
+			Phong phong) {
+		super();
+		this.maHoaDon = maHoaDon;
+		this.datPhong = datPhong;
+		this.tienPhong = tienPhong;
+		this.tienDV = tienDV;
+		this.thanhTien = thanhTien;
+		this.soNgayThue = soNgayThue;
+		this.soGioThue = soGioThue;
+		this.phuThuCheckin = phuThuCheckin;
+		this.phuThuCheckout = phuThuCheckout;
+		this.tenUser = tenUser;
+		this.tenKH = tenKH;
+		this.ngayThanhToan = ngayThanhToan;
+		this.ghiChu = ghiChu;
+		this.phong = phong;
+	}
+	public HoaDon() {
+		super();
+	}
+	public HoaDon(int maHoaDon) {
+		super();
+		this.maHoaDon = maHoaDon;
+	}
+	public int getMaHoaDon() {
+		return maHoaDon;
+	}
+	public void setMaHoaDon(int maHoaDon) {
+		this.maHoaDon = maHoaDon;
+	}
+	public ThuePhong getDatPhong() {
+		return datPhong;
+	}
+	public void setDatPhong(ThuePhong datPhong) {
+		this.datPhong = datPhong;
+	}
+	public double getTienPhong() {
+		return tienPhong;
+	}
+	public void setTienPhong(double tienPhong) {
+		this.tienPhong = tienPhong;
+	}
+	public double getTienDV() {
+		return tienDV;
+	}
+	public void setTienDV(double tienDV) {
+		this.tienDV = tienDV;
+	}
+	public double getThanhTien() {
+		return thanhTien;
+	}
+	public void setThanhTien(double thanhTien) {
+		this.thanhTien = thanhTien;
+	}
+	public double getSoNgayThue() {
+		return soNgayThue;
+	}
+	public void setSoNgayThue(double soNgayThue) {
+		this.soNgayThue = soNgayThue;
+	}
+	public double getSoGioThue() {
+		return soGioThue;
+	}
+	public void setSoGioThue(double soGioThue) {
+		this.soGioThue = soGioThue;
+	}
+	public double getPhuThuCheckin() {
+		return phuThuCheckin;
+	}
+	public void setPhuThuCheckin(double phuThuCheckin) {
+		this.phuThuCheckin = phuThuCheckin;
+	}
+	public double getPhuThuCheckout() {
+		return phuThuCheckout;
+	}
+	public void setPhuThuCheckout(double phuThuCheckout) {
+		this.phuThuCheckout = phuThuCheckout;
+	}
+	public String getTenUser() {
+		return tenUser;
+	}
+	public void setTenUser(String tenUser) {
+		this.tenUser = tenUser;
+	}
+	public String getTenKH() {
+		return tenKH;
+	}
+	public void setTenKH(String tenKH) {
+		this.tenKH = tenKH;
+	}
+	public String getNgayThanhToan() {
+		return ngayThanhToan;
+	}
+	public void setNgayThanhToan(String ngayThanhToan) {
+		this.ngayThanhToan = ngayThanhToan;
+	}
+	public String getGhiChu() {
+		return ghiChu;
+	}
+	public void setGhiChu(String ghiChu) {
+		this.ghiChu = ghiChu;
+	}
+	public Phong getPhong() {
+		return phong;
+	}
+	public void setPhong(Phong phong) {
+		this.phong = phong;
+	}
+	@Override
+	public String toString() {
+		return "HoaDon [maHoaDon=" + maHoaDon + ", datPhong=" + datPhong
+				+ ", tienPhong=" + tienPhong + ", tienDV=" + tienDV
+				+ ", thanhTien=" + thanhTien + ", soNgayThue=" + soNgayThue
+				+ ", soGioThue=" + soGioThue + ", phuThuCheckin="
+				+ phuThuCheckin + ", phuThuCheckout=" + phuThuCheckout
+				+ ", tenUser=" + tenUser + ", tenKH=" + tenKH
+				+ ", ngayThanhToan=" + ngayThanhToan + ", ghiChu=" + ghiChu
+				+ ", phong=" + phong + "]";
+	}
+	
+   
+
+}

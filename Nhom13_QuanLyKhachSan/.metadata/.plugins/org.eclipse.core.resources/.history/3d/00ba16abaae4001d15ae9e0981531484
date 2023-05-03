@@ -1,0 +1,145 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package bus;
+
+import gui.thongbao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class BUS_KH {
+
+	public static boolean KT_Them(entity.KH KH) {
+		ResultSet rs = dao.DAO_KhachHang.LayKH();
+		try {
+			while (rs.next()) {
+				if (rs.getString("MaKhachHang").matches(KH.getMaKH())) {
+					thongbao.thongbao("Mã khách hàng đã dùng", "");
+					return false;
+				}
+			}
+		} catch (SQLException ex) {
+			Logger.getLogger(BUS_KH.class.getName())
+					.log(Level.SEVERE, null, ex);
+		}
+
+		if (KH.getMaKH().trim().equals("") || KH.getTenKH().trim().equals("")
+				|| KH.getCCCD().trim().equals("")) {
+			thongbao.thongbao("Không để trống thông tin", "thông báo");
+			return false;
+		}
+
+		if (!(KH.getCCCD()
+				.matches("0((?!0[3579]|1[368]|2[18]|3[29]|4[13]|5[037]|6[1359]|7[18]|8[15]|9[05])[0-9]{2})(0|1|2|3)[0-9]{8}"))) {
+			thongbao.thongbao("Nhập lại số CCCD", "");
+			return false;
+		} else {
+			Calendar cal = Calendar.getInstance();
+			int year = cal.get(Calendar.YEAR);
+			System.out.println("Năm hiện tại: " + year);
+			int namSinh = year - KH.getTuoi();
+			if (namSinh > 2000) {
+				if (!(KH.getCCCD().substring(3, 5).equals((namSinh + "")
+						.substring(2, 4)))) {
+					thongbao.thongbao("Sai hai số thứ 3 và 4 là năm sinh", "");
+					return false;
+				} else {
+					if (KH.isGioiTinh()) {
+						if (!(KH.getCCCD().substring(5, 6).equals("2"))) {
+							thongbao.thongbao("Sai số thứ 5 là giới tính", "");
+							return false;
+						}
+					}else {
+						if (!(KH.getCCCD().substring(5, 6).equals("3"))) {
+							thongbao.thongbao("Sai số thứ 5 là giới tính", "");
+							return false;
+					}
+				}
+			} else {
+				if (!(KH.getCCCD().substring(3, 5).equals((namSinh + "")
+						.substring(2, 4)))) {
+					thongbao.thongbao("Sai hai số thứ 3 và 4 là năm sinh", "");
+					return false;
+				} else if (KH.isGioiTinh()) {
+					if (!(KH.getCCCD().substring(5, 6).equals("2"))) {
+						thongbao.thongbao("Sai số thứ 5 là giới tính", "");
+						return false;
+					}
+				}
+			}
+		}
+
+		return true;
+	}
+
+	public static void dodulieu(JTable tbl) {
+		DefaultTableModel tblModel = (DefaultTableModel) tbl.getModel();
+		tblModel.setRowCount(0);
+		Object obj[] = new Object[2];
+		ResultSet rs = dao.DAO_KhachHang.LayKH();
+		try {
+			while (rs.next()) {
+				obj[0] = rs.getString("MaKhachHang");
+				obj[1] = rs.getString("TenKhachHang");
+				tblModel.addRow(obj);
+			}
+		} catch (SQLException ex) {
+			System.out.println("lỗi đổ table");
+		}
+	}
+
+	public static void TimKiem(JTable tbl, String tukhoa) {
+		DefaultTableModel tblModel = (DefaultTableModel) tbl.getModel();
+		tblModel.setRowCount(0);
+		Object obj[] = new Object[2];
+		ResultSet rs = dao.DAO_KhachHang.TimKiem(tukhoa);
+		try {
+			while (rs.next()) {
+				obj[0] = rs.getString("MaKhachHang");
+				obj[1] = rs.getString("TenKhachHang");
+				tblModel.addRow(obj);
+			}
+		} catch (SQLException ex) {
+			System.out.println("lỗi đổ table");
+		}
+	}
+
+	public static boolean KT_Xoa(String MaKH) {
+		ResultSet rs = dao.DAO_ThuePhong.LayTatCa();
+		try {
+			while (rs.next()) {
+				if (rs.getString("MaKhachHang").matches(MaKH)) {
+					thongbao.thongbao("Khách hàng đã hoặc đang thuê phòng", "");
+					return false;
+				}
+			}
+		} catch (SQLException ex) {
+			Logger.getLogger(BUS_KH.class.getName())
+					.log(Level.SEVERE, null, ex);
+		}
+		return true;
+	}
+
+	public static boolean KT_Sua(entity.KH KH) {
+		if (KH.getMaKH().trim().equals("") || KH.getTenKH().trim().equals("")
+				|| KH.getCCCD().trim().equals("")) {
+			thongbao.thongbao("Không để trống thông tin", "thông báo");
+			return false;
+		}
+		return true;
+	}
+
+}

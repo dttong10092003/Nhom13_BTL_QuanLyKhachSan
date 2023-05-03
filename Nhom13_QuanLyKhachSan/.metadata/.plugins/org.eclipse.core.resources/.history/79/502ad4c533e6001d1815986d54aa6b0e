@@ -1,0 +1,112 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entity;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class ThuePhong {
+	int maDatPhong;
+    String NgayThue,NgayRaDuKien,TenUser,tinhTrang;
+    boolean LoaiHinhThue;
+    double TienCoc;
+    int soNguoi;
+    KhachHang khachHang;
+    Phong phong;
+	public ThuePhong(int maDatPhong, String ngayThue, String ngayRaDuKien,
+			String tenUser, String tinhTrang, boolean loaiHinhThue,
+			double tienCoc, int soNguoi, KhachHang khachHang, Phong phong) {
+		
+		this.maDatPhong = maDatPhong;
+		NgayThue = ngayThue;
+		NgayRaDuKien = ngayRaDuKien;
+		TenUser = tenUser;
+		this.tinhTrang = tinhTrang;
+		LoaiHinhThue = loaiHinhThue;
+		TienCoc = tienCoc;
+		this.soNguoi = soNguoi;
+		this.khachHang = khachHang;
+		this.phong = phong;
+	}
+	public ThuePhong() {
+		
+	}
+	public ThuePhong(int maDatPhong) {
+		
+		this.maDatPhong = maDatPhong;
+	}
+	public int getMaDatPhong() {
+		return maDatPhong;
+	}
+	public void setMaDatPhong(int maDatPhong) {
+		this.maDatPhong = maDatPhong;
+	}
+	public String getNgayThue() {
+		return NgayThue;
+	}
+	public void setNgayThue(String ngayThue) {
+		NgayThue = ngayThue;
+	}
+	public String getNgayRaDuKien() {
+		return NgayRaDuKien;
+	}
+	public void setNgayRaDuKien(String ngayRaDuKien) {
+		NgayRaDuKien = ngayRaDuKien;
+	}
+	public String getTenUser() {
+		return TenUser;
+	}
+	public void setTenUser(String tenUser) {
+		TenUser = tenUser;
+	}
+	public String getTinhTrang() {
+		return tinhTrang;
+	}
+	public void setTinhTrang(String tinhTrang) {
+		this.tinhTrang = tinhTrang;
+	}
+	public boolean isLoaiHinhThue() {
+		return LoaiHinhThue;
+	}
+	public void setLoaiHinhThue(boolean loaiHinhThue) {
+		LoaiHinhThue = loaiHinhThue;
+	}
+	public double getTienCoc() {
+		return TienCoc;
+	}
+	public void setTienCoc(double tienCoc) {
+		TienCoc = tienCoc;
+	}
+	public int getSoNguoi() {
+		return soNguoi;
+	}
+	public void setSoNguoi(int soNguoi) {
+		this.soNguoi = soNguoi;
+	}
+	public KhachHang getKhachHang() {
+		return khachHang;
+	}
+	public void setKhachHang(KhachHang khachHang) {
+		this.khachHang = khachHang;
+	}
+	public Phong getPhong() {
+		return phong;
+	}
+	public void setPhong(Phong phong) {
+		this.phong = phong;
+	}
+	@Override
+	public String toString() {
+		return "ThuePhong [maDatPhong=" + maDatPhong + ", NgayThue=" + NgayThue
+				+ ", NgayRaDuKien=" + NgayRaDuKien + ", TenUser=" + TenUser
+				+ ", tinhTrang=" + tinhTrang + ", LoaiHinhThue=" + LoaiHinhThue
+				+ ", TienCoc=" + TienCoc + ", soNguoi=" + soNguoi
+				+ ", khachHang=" + khachHang + ", phong=" + phong + "]";
+	}
+    
+    
+}

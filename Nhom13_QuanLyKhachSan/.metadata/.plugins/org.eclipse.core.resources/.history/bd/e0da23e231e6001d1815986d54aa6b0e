@@ -1,0 +1,62 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entity;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class Luong {
+    private String maluong;
+    private double luongGio;
+    private int sogiolam;
+    private String ghichu;
+	public Luong(String maluong, double luongGio, int sogiolam, String ghichu) {
+		this.maluong = maluong;
+		this.luongGio = luonggio;
+		this.sogiolam = sogiolam;
+		this.ghichu = ghichu;
+	}
+	public Luong(String maluong) {
+		this.maluong = maluong;
+	}
+	public Luong() {
+		
+	}
+	public String getMaluong() {
+		return maluong;
+	}
+	public void setMaluong(String maluong) {
+		this.maluong = maluong;
+	}
+	public double getLuonggio() {
+		return luonggio;
+	}
+	public void setLuonggio(double luonggio) {
+		this.luonggio = luonggio;
+	}
+	public int getSogiolam() {
+		return sogiolam;
+	}
+	public void setSogiolam(int sogiolam) {
+		this.sogiolam = sogiolam;
+	}
+	public String getGhichu() {
+		return ghichu;
+	}
+	public void setGhichu(String ghichu) {
+		this.ghichu = ghichu;
+	}
+	@Override
+	public String toString() {
+		return "Luong [maluong=" + maluong + ", luonggio=" + luonggio
+				+ ", sogiolam=" + sogiolam + ", ghichu=" + ghichu + "]";
+	}
+	
+	
+
+  
+}

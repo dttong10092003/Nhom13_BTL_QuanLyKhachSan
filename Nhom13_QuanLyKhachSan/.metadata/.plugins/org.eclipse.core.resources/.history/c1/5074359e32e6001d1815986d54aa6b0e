@@ -1,0 +1,99 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entity;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class KH {
+	private String MaKH, TenKH, SDT, CCCD;
+	private LoaiKH loaiKH;
+	private int Tuoi;
+	private boolean GioiTinh;
+	
+	
+
+	public KH(String maKH, String tenKH, String sDT, String cCCD,
+			LoaiKH loaiKH, int tuoi, boolean gioiTinh) {
+		
+		MaKH = maKH;
+		TenKH = tenKH;
+		SDT = sDT;
+		CCCD = cCCD;
+		this.loaiKH = loaiKH;
+		Tuoi = tuoi;
+		GioiTinh = gioiTinh;
+	}
+	
+
+	public KH() {
+		
+	}
+
+
+	public KH(String maKH) {
+		
+		MaKH = maKH;
+	}
+
+
+	public String getMaKH() {
+		return MaKH;
+	}
+
+	public void setMaKH(String MaKH) {
+		this.MaKH = MaKH;
+	}
+
+	public String getTenKH() {
+		return TenKH;
+	}
+
+	public void setTenKH(String TenKH) {
+		this.TenKH = TenKH;
+	}
+
+	public String getSDT() {
+		return SDT;
+	}
+
+	public void setSDT(String SDT) {
+		this.SDT = SDT;
+	}
+
+	public String getCCCD() {
+		return CCCD;
+	}
+
+	public void setCCCD(String CCCD) {
+		this.CCCD = CCCD;
+	}
+
+	public int getTuoi() {
+		return Tuoi;
+	}
+
+	public void setTuoi(int tuoi) {
+		this.Tuoi = tuoi;
+	}
+
+	public LoaiKH getLoaiKH() {
+		return loaiKH;
+	}
+
+	public void setLoaiKH(LoaiKH loaiKH) {
+		this.loaiKH = loaiKH;
+	}
+
+	public boolean isGioiTinh() {
+		return GioiTinh;
+	}
+
+	public void setGioiTinh(boolean GioiTinh) {
+		this.GioiTinh = GioiTinh;
+	}
+}

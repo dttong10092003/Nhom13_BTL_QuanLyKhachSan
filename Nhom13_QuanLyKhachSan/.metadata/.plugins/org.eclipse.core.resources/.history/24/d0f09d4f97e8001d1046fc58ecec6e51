@@ -1,0 +1,87 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dao;
+
+import gui.pnl_NhanVien;
+import gui.thongbao;
+
+import java.sql.ResultSet;
+
+import connectDB.connection;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class DAO_User {
+
+    public static ResultSet layTKTheoMaNV(String MaNV) {
+        String sql = "SELECT * FROM [dbo].[User] where MaNhanVien =N'" + MaNV + "'";
+        return connection.Getdata(sql);
+    }
+
+    public static ResultSet layTatCa() {
+        String sql = "SELECT * FROM [dbo].[User]";
+        return connection.Getdata(sql);
+    }
+
+    public static void them(entity.User u) {
+        String sql = "INSERT INTO [dbo].[User] "
+                + "           ([TenUser] "
+                + "           ,[MatKhau] "
+                + " "
+                + "           ,[MaQuyen] "
+                + "  "
+                + "           ,[MaNhanVien]) "
+                + "     VALUES "
+                + "           (N'" + u.getTenUser() + "' "
+                + "           ,N'" + u.getmK() + "' "
+                + "   "
+                + "           ,N'" + u.getQuyen().getMaQuyen() + "' "
+                + "   "
+                + "           ,N'" + pnl_NhanVien.MaNV + "')";
+        int kq = connection.ExecuteTruyVan(sql);
+        if (kq > 0) {
+            thongbao.thongbao("Thêm thành công", "");
+        } else {
+            thongbao.thongbao("Thêm  không thành công", "");
+        }
+    }
+
+    public static void Xoa() {
+        String sql = "DELETE FROM [dbo].[User] WHERE MaNhanVien=N'" + pnl_NhanVien.MaNV + "'";
+        int kq = connection.ExecuteTruyVan(sql);
+        if (kq > 0) {
+            thongbao.thongbao("Xóa thành công", "");
+        } else {
+            thongbao.thongbao("Xóa không thành công", "");
+        }
+    }
+
+    public static void Sua(entity.User sua) {
+        String sql = "UPDATE [dbo].[User]   SET       [MatKhau] = N'" + sua.getmK() + "',[MaQuyen] = N'" + sua.getQuyen().getMaQuyen() + "'         WHERE TenUser=N'" + sua.getTenUser() + "'";
+        if (connection.ExecuteTruyVan(sql) > 0) {
+            thongbao.thongbao("Sủa thành công", "");
+        } else {
+            thongbao.thongbao("Sửa không thành công", "");
+        }
+    }
+
+    public static void SuaMK(String MK, String TenUser) {
+        String sql = "UPDATE [dbo].[User] SET  "
+                + "[MatKhau] =N'" + MK + "' "
+                + " "
+                + " WHERE TenUser=N'" + TenUser + "'";
+        int kq = connection.ExecuteTruyVan(sql);
+        if (kq > 0) {
+            thongbao.thongbao("Thành công", "");
+
+        } else {
+            thongbao.thongbao("Thất bại", "");
+        }
+
+    }
+}

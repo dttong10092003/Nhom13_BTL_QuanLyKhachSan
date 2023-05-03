@@ -1,0 +1,8 @@
+package gui;
+
+public class Testting {
+	public static void main(String[] args) {
+		frm_ManHinhChao frm=new frm_ManHinhChao();
+		frm.setVisible(true);
+	}
+}

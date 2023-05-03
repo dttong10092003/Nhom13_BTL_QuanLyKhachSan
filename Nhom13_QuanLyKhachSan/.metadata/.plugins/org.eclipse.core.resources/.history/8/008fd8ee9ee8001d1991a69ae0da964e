@@ -1,0 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dao;
+
+import connectDB.connection;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class DAO_HoaDon {
+
+    public static void themHD(entity.HoaDon HD) {
+        String sql = "set dateformat dmy "
+                + "INSERT INTO [dbo].[HoaDon] "
+                + "           ([MaDatPhong] "
+                + "           ,[TenUser] "
+                + "           ,[TenKhachHang] "
+                + "           ,[MaPhong] "
+                + "           ,[SoNgayThue] "
+                + "           ,[SoGioThue] "
+                + "           ,[TienPhong] "
+                + "           ,[PhuThuCheckin] "
+                + "           ,[PhuThuCheckout] "
+                + "           ,[TienDichVu] "
+                + "           ,[ThanhTien] "
+                + "           ,[NgayThanhToan]) "
+                + "     VALUES "
+                + "           ("+HD.getDatPhong().getMaDatPhong()+" "
+                + "           ,N'"+HD.getTenUser()+"' "
+                + "           ,N'"+HD.getTenKH()+"' "
+                + "           ,N'"+HD.getPhong().getMaPhong()+"' "
+                + "           ,"+HD.getSoNgayThue()+" "
+                + "           ,"+HD.getSoGioThue()+" "
+                + "           ,"+HD.getTienPhong()+" "
+                + "           ,"+HD.getPhuThuCheckin()+" "
+                + "           ,"+HD.getPhuThuCheckout()+" "
+                + "           ,"+HD.getTienDV()+" "
+                + "           ,"+HD.getThanhTien()+" "
+                + "           ,'"+HD.getNgayThanhToan()+"')";
+        connection.executeTruyVan(sql);
+    }
+}

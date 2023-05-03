@@ -1,0 +1,51 @@
+1681359854560	Delete elements
+1681361186698	Delete elements
+1681362261632	Rename type 'frm_QuanLyChinh'
+1681479929853	Delete element
+1681480354128	Delete element
+1681480357168	Delete element
+1681480360302	Delete element
+1681480363030	Delete element
+1681480365650	Delete element
+1681480629557	Delete elements
+1681483802223	Rename package 'BLL'
+1681483830116	Rename type 'BLL_CTDV'
+1681483857926	Rename type 'BLL_User'
+1681483870425	Rename type 'BLL_ThuePhong'
+1681483879249	Rename type 'BLL_ThongKe'
+1681483898923	Rename type 'BLL_Phong'
+1681483904702	Rename type 'BLL_NhanVien'
+1681483910988	Rename type 'BLL_NhanLuong'
+1681483919355	Rename type 'BLL_Luong'
+1681483927200	Rename type 'Bus_Luong'
+1681483933944	Rename type 'BLL_LoaiPhong'
+1681483941715	Rename type 'BLL_LoaiKH'
+1681483946153	Rename type 'BLL_Khac'
+1681483953134	Rename type 'BLL_KH'
+1681483958301	Rename type 'BLL_DichVu'
+1681483962040	Rename type 'BLL_DangNhap'
+1681483966550	Rename type 'BLL_CungCapDichVu'
+1681484013745	Rename package 'DTO'
+1681484020205	Rename package 'DAO'
+1681484025060	Rename package 'BUS'
+1681484030070	Rename package 'GUI'
+1681484211814	Rename type 'DTO_CTDV'
+1681484216812	Rename type 'DTO_DichVu'
+1681484222588	Rename type 'DTO_HoaDon'
+1681484227464	Rename type 'DTO_KH'
+1681484235724	Rename type 'DTO_Khac'
+1681484240290	Rename type 'DTO_LoaiKH'
+1681484245362	Rename type 'DTO_Luong'
+1681484249481	Rename type 'DTO_NhanLuong'
+1681484254912	Rename type 'DTO_NhanVien'
+1681484259982	Rename type 'DTO_ThuePhong'
+1681484262860	Rename type 'DTO_Phong'
+1681484267668	Rename type 'DTO_User'
+1681533534388	Delete element
+1681534301396	Rename type 'HoaDon'
+1681535879273	Delete element
+1681536149118	Delete element
+1681536626253	Delete element
+1681538203322	Delete element
+1681545534035	Delete element
+1681545540640	Delete element

@@ -1,0 +1,74 @@
+//package entity;
+//
+//import java.util.Date;
+//
+//public class ChiTietLuong {
+//	private String maCTL;
+//	private NhanVien nhanVien;
+//	int soNgayNghi;
+//	int soNgayLam;
+//	Date ngayNhanLuong;
+//	double tongNhan;
+//	public ChiTietLuong(String maCTL, NhanVien nhanVien, int soNgayNghi,
+//			int soNgayLam, Date ngayNhanLuong, double tongNhan) {
+//		
+//		this.maCTL = maCTL;
+//		this.nhanVien = nhanVien;
+//		this.soNgayNghi = soNgayNghi;
+//		this.soNgayLam = soNgayLam;
+//		this.ngayNhanLuong = ngayNhanLuong;
+//		this.tongNhan = tongNhan;
+//	}
+//	public ChiTietLuong(String maCTL) {
+//		super();
+//		this.maCTL = maCTL;
+//	}
+//	public ChiTietLuong() {
+//		super();
+//	}
+//	public String getMaCTL() {
+//		return maCTL;
+//	}
+//	public void setMaCTL(String maCTL) {
+//		this.maCTL = maCTL;
+//	}
+//	public NhanVien getNhanVien() {
+//		return nhanVien;
+//	}
+//	public void setNhanVien(NhanVien nhanVien) {
+//		this.nhanVien = nhanVien;
+//	}
+//	public int getSoNgayNghi() {
+//		return soNgayNghi;
+//	}
+//	public void setSoNgayNghi(int soNgayNghi) {
+//		this.soNgayNghi = soNgayNghi;
+//	}
+//	public int getSoNgayLam() {
+//		return soNgayLam;
+//	}
+//	public void setSoNgayLam(int soNgayLam) {
+//		this.soNgayLam = soNgayLam;
+//	}
+//	public Date getNgayNhanLuong() {
+//		return ngayNhanLuong;
+//	}
+//	public void setNgayNhanLuong(Date ngayNhanLuong) {
+//		this.ngayNhanLuong = ngayNhanLuong;
+//	}
+//	public double getTongNhan() {
+//		return tongNhan;
+//	}
+//	public void setTongNhan(double tongNhan) {
+//		this.tongNhan = tongNhan;
+//	}
+//	@Override
+//	public String toString() {
+//		return "ChiTietLuong [maCTL=" + maCTL + ", nhanVien=" + nhanVien
+//				+ ", soNgayNghi=" + soNgayNghi + ", soNgayLam=" + soNgayLam
+//				+ ", ngayNhanLuong=" + ngayNhanLuong + ", tongNhan=" + tongNhan
+//				+ "]";
+//	}
+//	
+//	
+//}

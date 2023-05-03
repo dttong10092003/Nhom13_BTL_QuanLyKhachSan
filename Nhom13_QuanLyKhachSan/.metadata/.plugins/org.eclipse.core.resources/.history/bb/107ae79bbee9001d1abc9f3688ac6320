@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dao;
+
+import java.sql.ResultSet;
+import java.util.Date;
+
+import connectDB.Connection;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class DAO_ChiTietLuong {
+
+    public static void them(entity.ChiTietLuong nl) {
+        String sql = "set dateformat dmy "
+                + "INSERT INTO [dbo].[ChiTietLuong] "
+                + "           ([MaChiTietLuong] "
+                + "           ,[MaNhanVien] "
+                + "           ,[SoNgayNghi] "
+                + "           ,[SoNgayLam] "
+                + "           ,[NgayNhanLuong] "
+                + "           ,[TongNhan]) "
+                + "     VALUES "
+                + "           (N'"+nl.getMaChiTietLuong()+"' "
+                + "           ,N'"+nl.getNhanVien().getMaNV()+"' "
+                + "           ,"+nl.getSoNgayNghi()+" "
+                + "           ,"+nl.getSoNgayLam()+" "
+                + "           ,'"+nl.getNgayNhanLuong()+"' "
+                + "           ,"+nl.getTongNhan()+")";
+        Connection.executeTruyVan(sql);
+    }
+    
+    public static void xoaTheoMaNV(String maNV){
+    	 String sql = "DELETE FROM [dbo].[ChiTietLuong] WHERE MaNhanVien=N'" + maNV+ "'";
+         Connection.executeTruyVan(sql);
+    }
+
+    public static void capNhatNgayLam(entity.ChiTietLuong nl, String ngayhientai) {
+        String sql = " set dateformat dmy "
+                + "UPDATE [dbo].[NhanVien] "
+                + "SET [NgayBatDauLam] ='" + ngayhientai + "' "
+                + "where MaNhanVien=N'" + nl.getNhanVien().getMaNV() + "'";
+        Connection.executeTruyVan(sql);
+    }
+
+    public static ResultSet lay() {
+        String sql = "SELECT * FROM [dbo].[ChiTietLuong]";
+        return Connection.getdata(sql);
+    }
+}

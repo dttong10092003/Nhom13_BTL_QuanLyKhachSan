@@ -1,0 +1,104 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entity;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class CTDV {
+	int maCTDV;
+	DichVu DV;
+	int MaDP, SoLuong;
+	double ThanhTien, DonGia;
+	// Thieu ma dat phong`
+	ThuePhong phong;
+
+	public double getDonGia() {
+		return DonGia;
+	}
+
+	public void setDonGia(double DonGia) {
+		this.DonGia = DonGia;
+	}
+
+	public int getMaDP() {
+		return MaDP;
+	}
+
+	public DichVu getDV() {
+		return DV;
+	}
+
+	public void setDV(DichVu dV) {
+		DV = dV;
+	}
+
+	public void setMaDP(int MaDP) {
+		this.MaDP = MaDP;
+	}
+
+	public int getSoLuong() {
+		return SoLuong;
+	}
+
+	public void setSoLuong(int SoLuong) {
+		this.SoLuong = SoLuong;
+	}
+
+	public double getThanhTien() {
+		return ThanhTien;
+	}
+
+	public void setThanhTien(double ThanhTien) {
+		this.ThanhTien = ThanhTien;
+	}
+
+	public int getMaCTDV() {
+		return maCTDV;
+	}
+
+	public void setMaCTDV(int maCTDV) {
+		this.maCTDV = maCTDV;
+	}
+
+	public ThuePhong getPhong() {
+		return phong;
+	}
+
+	public void setPhong(ThuePhong phong) {
+		this.phong = phong;
+	}
+
+	public CTDV(int maCTDV, DichVu dV, int maDP, int soLuong, double thanhTien,
+			double donGia, ThuePhong phong) {
+
+		this.maCTDV = maCTDV;
+		DV = dV;
+		MaDP = maDP;
+		SoLuong = soLuong;
+		ThanhTien = thanhTien;
+		DonGia = donGia;
+		this.phong = phong;
+	}
+
+	public CTDV() {
+
+	}
+
+	public CTDV(int maCTDV) {
+
+		this.maCTDV = maCTDV;
+	}
+
+	@Override
+	public String toString() {
+		return "CTDV [maCTDV=" + maCTDV + ", DV=" + DV + ", MaDP=" + MaDP
+				+ ", SoLuong=" + SoLuong + ", ThanhTien=" + ThanhTien
+				+ ", DonGia=" + DonGia + ", phong=" + phong + "]";
+	}
+
+}

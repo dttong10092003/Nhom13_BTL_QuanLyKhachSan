@@ -1,0 +1,142 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dao;
+
+import gui.thongbao;
+
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import connectDB.connection;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class DAO_DatPhong {
+
+    public static ResultSet layPhongChuaThanhToan() {//lấy đặt phòng chưa thanh toán
+        String sql = "SELECT * FROM [dbo].[DatPhong] where TinhTrang like N'Chưa thanh toán'";
+        return connection.getdata(sql);
+    }
+
+    public static ResultSet layTheoMa(String MaDP) {
+        String sql = "SELECT * FROM [dbo].[DatPhong] where MaDatPhong=" + MaDP + "";
+        return connection.getdata(sql);
+    }
+
+    public static void them(entity.DatPhong add) {
+        String sql = "set dateformat dmy "
+                + "INSERT INTO [dbo].[DatPhong] "
+                + "           ([MaKhachHang] "
+                + "           ,[MaPhong] "
+                + "           ,[LoaiHinhThue] "
+                + "           ,[NgayThue] "
+                + "           ,[NgayRaDuKien] "
+                + "           ,[SoNguoi] "
+                + ",[TienDatCoc]"
+                + "           ,[TenUser]) "
+                + "     VALUES "
+                + "           (N'" + add.getKhachHang().getMaKH() + "' "
+                + "           ,N'" + add.getPhong().getMaPhong() + "' "
+                + "           ,'" + add.isLoaiHinhThue() + "' "
+                + "           ,'" + add.getNgayThue() + "' "
+                + "           ,'" + add.getNgayRaDuKien() + "' "
+                + "           ," + add.getSoNguoi() + " "
+                + "," + add.getTienCoc() + " "
+                + "           ,N'" + add.getTenUser() + "')";
+        int kq = connection.executeTruyVan(sql);
+        if (kq > 0) {
+            //sau khi thuê sẽ cập nhật phòng đó thành 'sudung'
+            dao.DAO_Phong.update(add.getPhong().getMaPhong());
+            thongbao.thongbao("Thuê thành công", "");
+        } else {
+            thongbao.thongbao("Thuê không thành công", "");
+        }
+    }
+
+    public static void datTruocPhong(entity.DatPhong add) {
+        String sql = "set dateformat dmy "
+                + "INSERT INTO [dbo].[DatPhong] "
+                + "           ([MaKhachHang] "
+                + "           ,[MaPhong] "
+                + "           ,[LoaiHinhThue] "
+                + "           ,[NgayThue] "
+                + "           ,[NgayRaDuKien] "
+                + "           ,[SoNguoi] "
+                + "           ,[TenUser] "
+                + "           ,[TinhTrang] "
+                + "           ,[TienDatCoc]) "
+                + "     VALUES "
+                + "           (N'" + add.getKhachHang().getMaKH() + "' "
+                + "           ,N'" + add.getPhong().getMaPhong() + "' "
+                + "           ,'" + add.isLoaiHinhThue() + "' "
+                + "           ,'" + add.getNgayThue() + "' "
+                + "           ,'" + add.getNgayRaDuKien() + "' "
+                + "           ," + add.getSoNguoi() + " "
+                + "           ,N'" + add.getTenUser() + "' "
+                + "           ,N'dattruoc' "
+                + "           ," + add.getTienCoc() + ")";
+        int kq = connection.executeTruyVan(sql);
+        if (kq > 0) {
+            //sau khi đặt trước phòng sẽ đặt trạng thái phòng thành 'dattruoc'
+            dao.DAO_Phong.updateDatTruoc(add.getPhong().getMaPhong());
+            thongbao.thongbao("Đặt thành công", "");
+        } else {
+            thongbao.thongbao("Đặt  không thành công", "");
+        }
+    }
+
+    public static void updateDatTruocThanhThue(String trangthai, String MaPhong) {
+        String sql = "UPDATE [dbo].[DatPhong] SET [TinhTrang] = N'" + trangthai + "' WHERE MaPhong=N'" + MaPhong + "' and TinhTrang=N'dattruoc'";
+        int kq = connection.executeTruyVan(sql);
+        if (kq > 0) {
+            //sau khi thuê sẽ cập nhật phòng đó thành 'sudung'
+            if (trangthai.equals("Chưa thanh toán")) {
+                dao.DAO_Phong.update(MaPhong);
+                thongbao.thongbao("Thuê thành công", "");
+            }
+
+        } else {
+            thongbao.thongbao("Không thành công", "");
+        }
+    }
+
+    public static void updateNgayThue(String MaPhong) {
+        Date d = new Date();
+        SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String ngaythue=s.format(d);
+        System.out.println("ngày thuê"+ngaythue);
+        String sql="UPDATE [dbo].[DatPhong] SET [NgayThue] = '"+ngaythue+"' WHERE MaPhong=N'"+MaPhong+"' and TinhTrang=N'dattruoc'";
+        connection.executeTruyVan(sql);
+    }
+
+    public static void sua(int songuoi, String MaDP) {
+        String sql = "UPDATE [dbo].[DatPhong] SET [SoNguoi] = " + songuoi + " WHERE MaDatPhong=" + MaDP + "";
+        int kq = connection.executeTruyVan(sql);
+        if (kq > 0) {
+            thongbao.thongbao("sửa thành công", "");
+        } else {
+            thongbao.thongbao("sửa  không thành công", "");
+        }
+    }
+
+    public static ResultSet layTienGio(String MaDP) {
+        String sql = "SELECT LoaiPhong.GiaTheoGio,LoaiPhong.GiaTheoNgay FROM DatPhong,Phong,LoaiPhong where DatPhong.MaPhong=Phong.MaPhong and Phong.MaLoaiPhong=LoaiPhong.MaLoaiPhong and DatPhong.MaDatPhong=" + MaDP + "";
+        return connection.getdata(sql);
+    }
+
+    public static void traPhong(String MaDP) {
+        String sql = "UPDATE [dbo].[DatPhong] SET [TinhTrang] = N'Đã thanh toán' WHERE MaDatPhong=" + MaDP + "";
+        connection.executeTruyVan(sql);
+    }
+    
+    public static ResultSet layTatCa(){
+    String sql="SELECT * FROM [dbo].[DatPhong]";
+    return connection.getdata(sql);
+    }
+}

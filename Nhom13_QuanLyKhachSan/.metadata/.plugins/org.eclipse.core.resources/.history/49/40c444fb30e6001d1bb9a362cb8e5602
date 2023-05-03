@@ -1,0 +1,45 @@
+package entity;
+
+public class Quyen {
+	private String maQuyen, tenQuyen, mota;
+
+	public Quyen(String maQuyen, String tenQuyen, String mota) {
+		maQuyen = maQuyen;
+		TenQuyen = tenQuyen;
+		Mota = mota;
+	}
+
+	public Quyen(String maQuyen) {
+
+		maQuyen = maQuyen;
+	}
+
+	public Quyen() {
+
+	}
+
+	public String getMaQuyen() {
+		return maQuyen;
+	}
+
+	public void setMaQuyen(String maQuyen) {
+		maQuyen = maQuyen;
+	}
+
+	public String getTenQuyen() {
+		return TenQuyen;
+	}
+
+	public void setTenQuyen(String tenQuyen) {
+		TenQuyen = tenQuyen;
+	}
+
+	public String getMota() {
+		return Mota;
+	}
+
+	public void setMota(String mota) {
+		Mota = mota;
+	}
+
+}

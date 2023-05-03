@@ -1,0 +1,92 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entity;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class DichVu {
+    private String MaDV,TenDV,DonVi,GhiChu;
+    private double donGia;
+
+    public String getMaDV() {
+        return MaDV;
+    }
+
+    public void setMaDV(String MaDV) {
+        this.MaDV = MaDV;
+    }
+
+    public String getTenDV() {
+        return TenDV;
+    }
+
+    public void setTenDV(String TenDV) {
+        this.TenDV = TenDV;
+    }
+
+    public String getDonVi() {
+        return DonVi;
+    }
+
+    public void setDonVi(String DonVi) {
+        this.DonVi = DonVi;
+    }
+
+//    public String getDonGia() {
+//        return DonGia;
+//    }
+//
+//    public void setDonGia(String DonGia) {
+//        this.DonGia = DonGia;
+//    }
+    
+
+    public String getGhiChu() {
+        return GhiChu;
+    }
+
+    public double getDonGia() {
+		return donGia;
+	}
+
+	public void setDonGia(double donGia) {
+		this.donGia = donGia;
+	}
+
+	public void setGhiChu(String GhiChu) {
+        this.GhiChu = GhiChu;
+    }
+
+	public DichVu(String maDV, String tenDV, String donVi, String ghiChu,
+			double donGia) {
+		;
+		MaDV = maDV;
+		TenDV = tenDV;
+		DonVi = donVi;
+		GhiChu = ghiChu;
+		this.donGia = donGia;
+	}
+
+	public DichVu() {
+		
+	}
+
+	public DichVu(String maDV) {
+		
+		MaDV = maDV;
+	}
+
+	@Override
+	public String toString() {
+		return "DichVu [MaDV=" + MaDV + ", TenDV=" + TenDV + ", DonVi=" + DonVi
+				+ ", GhiChu=" + GhiChu + ", donGia=" + donGia + "]";
+	}
+	
+	
+	
+}

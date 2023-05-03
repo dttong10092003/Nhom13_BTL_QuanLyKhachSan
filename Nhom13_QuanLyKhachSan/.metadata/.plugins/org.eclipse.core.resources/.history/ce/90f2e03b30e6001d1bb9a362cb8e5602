@@ -1,0 +1,106 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entity;
+
+import java.sql.Date;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class User {
+	private String TenUser, MK;
+	private Date NgayLap;
+	private Quyen quyen;
+	private String ghiChu;
+	private NhanVien nhanVien;
+    
+    
+	public User(String tenUser, String mK, Date ngayLap, Quyen quyen,
+			String ghiChu, NhanVien nhanVien) {
+		TenUser = tenUser;
+		MK = mK;
+		NgayLap = ngayLap;
+		this.quyen = quyen;
+		ghiChu = ghiChu;
+		this.nhanVien = nhanVien;
+	}
+	
+	
+	public User(String tenUser) {
+		TenUser = tenUser;
+	}
+
+
+	public User() {
+		
+	}
+
+
+	public String getTenUser() {
+		return TenUser;
+	}
+
+
+	public void setTenUser(String tenUser) {
+		TenUser = tenUser;
+	}
+
+
+	public String getMK() {
+		return MK;
+	}
+
+
+	public void setMK(String mK) {
+		MK = mK;
+	}
+
+
+	public Date getNgayLap() {
+		return NgayLap;
+	}
+
+
+	public void setNgayLap(Date ngayLap) {
+		NgayLap = ngayLap;
+	}
+
+
+	public Quyen getQuyen() {
+		return quyen;
+	}
+
+
+	public void setQuyen(Quyen quyen) {
+		this.quyen = quyen;
+	}
+
+
+	public String getGhiChu() {
+		return ghiChu;
+	}
+
+
+	public void setGhiChu(String ghiChu) {
+		ghiChu = ghiChu;
+	}
+
+
+	public NhanVien getNhanVien() {
+		return nhanVien;
+	}
+
+
+	public void setNhanVien(NhanVien nhanVien) {
+		this.nhanVien = nhanVien;
+	}
+    
+	
+
+
+}
+

@@ -1,0 +1,69 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dao;
+
+import gui.ChuyenDoi;
+import gui.thongbao;
+
+import java.sql.ResultSet;
+
+import connectDB.connection;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class DAO_LoaiPhong {
+
+    public static ResultSet layLoaiTheoMa(String MaLoai) {
+        String sql = "SELECT * FROM [dbo].[LoaiPhong] where MaLoaiPhong =N'" + MaLoai + "'";
+        return connection.getdata(sql);
+    }
+
+    public static ResultSet layTatCa() {
+        String sql = "SELECT * FROM [dbo].[LoaiPhong]";
+        return connection.getdata(sql);
+    }
+
+    public static void them(entity.LoaiPhong LP) {
+        String sql = "INSERT INTO [dbo].[LoaiPhong] "
+                + "           ([MaLoaiPhong] "
+                + "           ,[TenLoaiPhong] "
+                + "           ,[GiaTheoGio] "
+                + "           ,[GiaTheoNgay]) "
+                + "     VALUES "
+                + "           (N'" + LP.getMaLoaiPhong() + "' "
+                + "           ,N'" + LP.getTenLoaiPhong() + "' "
+                + "           ,N'" + LP.getGiaTheoGio() + "' "
+                + "           ,N'" + LP.getGiaTheoNgay() + "')";
+        int kq = connection.executeTruyVan(sql);
+        if (kq > 0) {
+            thongbao.thongbao("Thêm thành công", "");
+        } else {
+            thongbao.thongbao("Thêm không thành công", "");
+        }
+    }
+
+    public static void xoa(String MaLoaiPhong) {
+        String sql = "DELETE FROM [dbo].[LoaiPhong] WHERE MaLoaiPhong=N'" + MaLoaiPhong + "'";
+        connection.executeTruyVan(sql);
+    }
+
+    public static void sua(entity.LoaiPhong LP) {
+        String sql = "UPDATE [dbo].[LoaiPhong] "
+                + "   SET [MaLoaiPhong] = N'"+LP.getMaLoaiPhong()+"' "
+                + "      ,[TenLoaiPhong] = N'"+LP.getTenLoaiPhong()+"' "
+                + "      ,[GiaTheoGio] = "+LP.getGiaTheoGio()+" "
+                + "      ,[GiaTheoNgay] = "+LP.getGiaTheoNgay()+" "
+                + " WHERE MaLoaiPhong =N'"+LP.getMaLoaiPhong()+"'";
+        int kq = connection.executeTruyVan(sql);
+         if (kq > 0) {
+            thongbao.thongbao("Sửa thành công", "");
+        } else {
+            thongbao.thongbao("Sửa không thành công", "");
+        }
+    }
+}
