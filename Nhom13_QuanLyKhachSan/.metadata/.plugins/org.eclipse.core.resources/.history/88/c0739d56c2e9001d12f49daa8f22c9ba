@@ -817,7 +817,7 @@ public class frm_QuanLyChinh extends javax.swing.JFrame {
 
 	private void mnuThongTinMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_mnuThongTinMouseClicked
 		try {
-			Desktop.getDesktop().browse(new URI("https://github.com/dttong10092003/Nhom13_BTL_QuanLyKhachSan"));
+			Desktop.getDesktop().browse(new URI("https://github.com/"));
 		} catch (IOException | URISyntaxException ex) {
 			ex.printStackTrace();
 		}
