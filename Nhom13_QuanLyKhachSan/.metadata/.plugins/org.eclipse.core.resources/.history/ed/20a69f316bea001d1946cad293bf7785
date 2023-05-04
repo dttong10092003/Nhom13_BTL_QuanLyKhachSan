@@ -77,7 +77,7 @@ public class DAO_KhachHang {
         }
     }
     public static ResultSet timKiem(String tukhoa){
-    String sql="select *from KhachHang where TenKhachHang like N'%"+tukhoa+"%' or MaKhachHang like N'%"+tukhoa+"%' or SoDienThoai like N'%"+tukhoa+"%' or SoCCCD like N'%"+tukhoa+"%'";
+    String sql="select *from KhachHang where TenKhachHang like N'%"+tukhoa+"%' or SoDienThoai like N'%"+tukhoa+"%' or SoDienThoai like N'%"+tukhoa+"%' or SoCCCD like N'%"+tukhoa+"%'";
     return connection.getdata(sql);
     }
 }
