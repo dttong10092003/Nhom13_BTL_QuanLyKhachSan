@@ -272,13 +272,12 @@ public class pnl_DSThuePhong extends javax.swing.JPanel {
 
 		txt_TienPhong.setBackground(new java.awt.Color(102, 255, 204));
 		txt_TienPhong.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N\
-		txt_TienPhong.setEditable(false);
+		txt_TienPhong.setEditable(true);
 		txt_TienPhong.setText("0");
 		txt_TienPhong.setOpaque(true);
 
 		txt_TienDV.setBackground(new java.awt.Color(102, 255, 204));
 		txt_TienDV.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		txt_TienDV.setEditable(false);
 		txt_TienDV.setText("0");
 		txt_TienDV.setOpaque(true);
 
@@ -290,7 +289,6 @@ public class pnl_DSThuePhong extends javax.swing.JPanel {
 
 		txt_TongCong.setBackground(new java.awt.Color(102, 255, 204));
 		txt_TongCong.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		txt_TongCong.setEditable(false);
 		txt_TongCong.setText("0");
 		txt_TongCong.setOpaque(true);
 
@@ -324,7 +322,6 @@ public class pnl_DSThuePhong extends javax.swing.JPanel {
 
 		txt_TienCoc.setBackground(new java.awt.Color(51, 255, 204));
 		txt_TienCoc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		txt_TienCoc.setEditable(false);
 		txt_TienCoc.setText("0");
 		txt_TienCoc.setOpaque(true);
 
@@ -340,7 +337,6 @@ public class pnl_DSThuePhong extends javax.swing.JPanel {
 
 		txt_GiamGia.setBackground(new java.awt.Color(51, 255, 204));
 		txt_GiamGia.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-		txt_GiamGia.setEditable(false);
 		txt_GiamGia.setText("0");
 		txt_GiamGia.addKeyListener(new java.awt.event.KeyAdapter() {
 			public void keyReleased(java.awt.event.KeyEvent evt) {

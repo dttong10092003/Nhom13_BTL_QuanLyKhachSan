@@ -340,7 +340,6 @@ public class pnl_DSThuePhong extends javax.swing.JPanel {
 
 		txt_GiamGia.setBackground(new java.awt.Color(51, 255, 204));
 		txt_GiamGia.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-		txt_GiamGia.setEditable(false);
 		txt_GiamGia.setText("0");
 		txt_GiamGia.addKeyListener(new java.awt.event.KeyAdapter() {
 			public void keyReleased(java.awt.event.KeyEvent evt) {

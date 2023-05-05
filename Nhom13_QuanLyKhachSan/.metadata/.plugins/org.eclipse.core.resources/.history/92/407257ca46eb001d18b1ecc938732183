@@ -173,8 +173,11 @@ public class pnl_DSphong extends javax.swing.JPanel {
 								frm.tab.add("Danh sách phòng", pnl);
 								frm.tab.setSelectedComponent(pnl);
 							} else {
-								//Nếu không mún dọn giữ y
 							}
+							// System.out.println(MaPhong);
+							// frm_ThuePhong frm = new frm_ThuePhong();
+							// frm.setVisible(true);
+							// frm_ThuePhong.MaPhong = MaPhong;
 						}
 					});
 				}
